@@ -19,6 +19,8 @@ function initializePage() {
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
 	$("a.thumbnail").click(projectClick);
+	 $("#submitBtn").click(updateProject); 
+
 }
 
 
@@ -35,13 +37,10 @@ function projectClick(e) {
     if (description.length == 0) {
        $(containingProject).append("<div class='project-description'><p>Description of the project.</p></div>");
     } else {
-       description.html("<p>Stop clicking on me! You just did it at " + (new Date()) + "</p>");
+       //description.html("<p>Stop clicking on me! You just did it at " + (new Date()) + "</p>");
+       $(".project-description").fadeOut();
     }
 }
-
-function initializePage() {
-    $("#submitBtn").click(updateProject); 
-} 
 
 function updateProject(e) {
    var projectID = $('#project').val();
